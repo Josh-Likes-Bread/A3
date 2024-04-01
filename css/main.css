@@ -11,92 +11,185 @@
 *{
     margin: 0;
     padding: 0;
+
 }
 
 body{
-    background-color: black;
-    color: azure;
+    margin-top: 6.5vh;
+    background-color: white;
+    color: black;
     overflow: hidden;
+    padding: 1%;
+    box-sizing:border-box;    
+    padding-top: 2.9vw;
+
 }
 
 p{
     margin-top: 10pt;
     margin-bottom: 10pt;
+
 }
 
 
 a:link,
 a:visited {
-    color: azure;
+    color: black;
+
 }
 
 a:hover {
     text-decoration:none;
-}
-
-body {
-    padding-left: 3vw;
-    box-sizing:border-box;    
-    padding-top: 2.9vw;
+    
 }
 
 .event{
     z-index: 1;
+
 }
+
+.images{
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+
+}
+
+.images img{
+    width: 100%; 
+    height: auto;
+    border: 1px solid black;
+
+}
+
 
 #titles{
     font-style: normal;
 
-
 }
 
+
 .RM{
-    margin-top: 5vh;
-    font-size: 4rem;
-    font-family: "RedactionReg";
+    font-size: 3rem;
+    font-family: "roc-grotesk";
     font-weight: 300;
     font-style: bold;
     width: 100%;
     height: 100%;
-    margin-top: 5vh;
+    padding-left: 2vw;
+
 }
 
+/* .line{
+
+    border-top: 1px black solid;
+    width: 60vw;
+
+} */
+
+/* .line2{
+
+    border-top: 1px black solid;
+    margin-top: 4vh;
+
+} */
+
 .GD{
-    margin-top: 2vh;
     text-transform:uppercase;
+    padding-top: 5vh;
     font-size: 20rem;
-    width: 100%;
-    height: 100%;
     line-height: 15rem;
     /* font-family: "roc-grotesk", sans-serif; */
-    font-family: "Redaction","serif";
+    font-family: "Redaction";
     font-weight: 300;
-    padding-top: 8vh;
-    text-transform: uppercase;
-    border-top: 1px solid azure;
-    border-left: 1px solid azure;
-    width: 50vw;
+}
 
+@media (max-width: 768px) {
+    .GD{
+        text-transform:uppercase;
+        padding-top: 5vh;
+        font-size: 10rem;
+        line-height: 8rem;
+        /* font-family: "roc-grotesk", sans-serif; */
+        font-family: "Roc-grotesk";
+        font-weight: 300;
+    }
 }
 
 #titles h2 {
     font-size: 2rem;
-    font-family: "roc-grotesk", sans-serif;
+    font-family: "roc-grotesk";
+    font-size: 3rem;
     font-weight: 300;
     font-style: normal;
-    width: 100%;
-    height: 100%;
+    padding-left: 1.75vw;
+    margin-top: 3vh;
+
 }
 
 section{
-    font-family: monospace;
     line-height: 10pt;
     font-size: x-small;
     width: 35em;
-    border: solid azure 1px;
+    border: solid black 1px;
     padding: 2em;
-    background-color: black;
-    color: azure;
+    background-color: white;
+    color: black;
     position:absolute;
     overflow: scroll;
+
 }
+
+#anther_kiley{
+    height: 26vh;
+}
+
+#takahashi_kuan{
+    height: 32vh;
+}
+
+#e_roon_kang{
+    height: 32vh;
+}
+
+#sebastian_aubin{
+    height: 28vh;
+}
+
+p{
+    font-family: "roc-grotesk";
+}
+
+
+
+
+/* extra memes */
+
+.myButton{
+float: right;
+text-decoration: none;
+border: none;
+padding: 2px;
+background-color: white;
+font-size: 0.5rem;
+font-family: "roc-grotesk";
+color: gray;
+}
+
+.myButton:hover{
+    color: red;
+}
+
+.external_links{
+    width: 100%;
+}
+
+.their{
+    border-bottom: 1px solid black;
+    margin-top: 1.5rem;
+}
+
+.images img {
+    border: 1px solid black; /* Adjust border width and color as needed */
+  }

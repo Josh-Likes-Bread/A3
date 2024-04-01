@@ -1,16 +1,18 @@
 $(document).ready(function() {
 
   var eventDivs = $('.event');
-  var eventP = $(p);
   var currentIndex = 0;
   var isActive = false;
+  var secondIndex = 1
+  var thirdIndex = 2
+  var fourthIndex = 3
 
   $(document).on('mousemove', function(e) {
     if (!isActive) {
       var $currentEventDiv = $(eventDivs[currentIndex]);
-      var $currentP = $(eventP[currentIndex]);
       var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
       var topPos = e.pageY - ($currentEventDiv.outerHeight() / 2);
+
 
       $currentEventDiv.css({
         "top": topPos + "px",
@@ -20,36 +22,205 @@ $(document).ready(function() {
         "font-size": "8pt",
         "line-height": "12pt",
         "text-decoration": "none",
+        // "height": "30vh",
+        // "width": "35em"
       });
 
-      $currentP.css({
-        "filter": "blur(0px) !important",
+      //making the divs go back to their original size on mouseleave//
+
+      $('#anther_kiley').css({
+        'height': '26vh'
       })
 
+      $('#takahashi_kuan').css({
+        'height': '32vh'
+      })
 
+      $('#e_roon_kang').css({
+        'height': '32vh'
+      })
+
+      $('#sebastian_aubin').css({
+        'height': '28vh'
+      })
+
+      $(eventDivs[currentIndex]).css({
+        // "background-color": "black",
+        "transform":"scale(1)",
+      });
+      
+      $(eventDivs[secondIndex]).css({
+        // "background-color": "blue",
+        "transform":"scale(0.65)",
+      });
+
+      $(eventDivs[thirdIndex]).css({
+        // "background-color": "red",
+        "transform":"scale(0.75)",
+      });
+
+      $(eventDivs[fourthIndex]).css({
+        // "background-color": "green",
+        "transform":"scale(0.85)",
+      });
 
       currentIndex = (currentIndex + 1) % eventDivs.length;
+      secondIndex = (secondIndex + 1) % eventDivs.length;
+      thirdIndex = (thirdIndex + 1) % eventDivs.length;
+      fourthIndex = (fourthIndex + 1) % eventDivs.length;
       isActive = true;
     }
   });
+
+  
 
   $('.event').on('mouseleave', function() {
     isActive = false;
 
     $('.event').css({
-      "z-index":1,
-      "font-size": "8pt",
-      "font-family":"Redaction",
-      "line-height": "15pt",
-      "text-decoration": "line-through",
-    })
+      "z-index": 1,
+    });
 
-    $('p').css({
-      "filter": "blur(2px)"
-    })
-  });
+    // Reset button color to default
+    $(this).find('.myButton').css({
+      'color': '' // Reset color to default (remove inline style)
+    });
+
+  $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
 });
 
+  $('.event').on('click', function() {
+    // Find the button within the clicked div and change its color to blue
+    $(this).find('.myButton').css({
+      'color': 'blue'
+    });
+
+    $(eventDivs[fourthIndex]).css({
+      // "background-color": "black",
+      // 'width': '50vw',
+      'height': 'auto'
+    });
+
+  });
+
+});
+
+
+
+
+
+
+
+//failsafe
+
+
+// $(document).ready(function() {
+
+//   var eventDivs = $('.event');
+//   var currentIndex = 0;
+//   var isActive = false;
+//   var secondIndex = 1
+//   var thirdIndex = 2
+//   var fourthIndex = 3
+
+//   $(document).on('mousemove', function(e) {
+//     if (!isActive) {
+//       var $currentEventDiv = $(eventDivs[currentIndex]);
+//       var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
+//       var topPos = e.pageY - ($currentEventDiv.outerHeight() / 2);
+
+
+//       $currentEventDiv.css({
+//         "top": topPos + "px",
+//         "left": leftPos + "px",
+//         "z-index": 9999,
+//         "font-family": "RedactionReg",
+//         "font-size": "8pt",
+//         "line-height": "12pt",
+//         "text-decoration": "none",
+//         "height": "30vh",
+//         "width": "35em"
+//       });
+
+//       $(eventDivs[currentIndex]).css({
+//         // "background-color": "black",
+//         "transform":"scale(1)",
+//         "height": "30vh",
+//         "width": "35em"
+//       });
+      
+//       $(eventDivs[secondIndex]).css({
+//         // "background-color": "blue",
+//         "transform":"scale(0.65)",
+//         "height": "30vh",
+//         "width": "35em"
+//       });
+
+//       $(eventDivs[thirdIndex]).css({
+//         // "background-color": "red",
+//         "transform":"scale(0.75)",
+//         "height": "30vh",
+//         "width": "35em"
+//       });
+
+//       $(eventDivs[fourthIndex]).css({
+//         // "background-color": "green",
+//         "transform":"scale(0.85)",
+//         "height": "30vh",
+//         "width": "35em"
+//       });
+
+//       currentIndex = (currentIndex + 1) % eventDivs.length;
+//       secondIndex = (secondIndex + 1) % eventDivs.length;
+//       thirdIndex = (thirdIndex + 1) % eventDivs.length;
+//       fourthIndex = (fourthIndex + 1) % eventDivs.length;
+//       isActive = true;
+//     }
+//   });
+
+  
+
+//   $('.event').on('mouseleave', function() {
+//     isActive = false;
+
+//     $('.event').css({
+//       "z-index": 1,
+//     });
+
+//     // Reset button color to default
+//     $(this).find('.myButton').css({
+//       'color': '' // Reset color to default (remove inline style)
+//     });
+
+//   $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
+// });
+
+//   $('.event').on('click', function() {
+//     // Find the button within the clicked div and change its color to blue
+//     $(this).find('.myButton').css({
+//       'color': 'blue'
+//     });
+
+//     $(eventDivs[fourthIndex]).css({
+//       // "background-color": "black",
+//       // 'width': '50vw',
+//       'height': '80vh'
+//     });
+
+//   });
+
+// });
+
+
+// extra memes
+
+
+// $('.event').on('click', function() {
+//   // Find the button within the clicked div and change its color to blue
+//   $(this).find('.myButton').css({
+//     'color': 'blue'
+//   });
+// });
 
 
 
