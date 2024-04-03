@@ -81,6 +81,9 @@ $(document).ready(function() {
       "z-index": 1,
     });
 
+
+    //chatterino
+
     // Reset button color to default
     $(this).find('.myButton').css({
       'color': '' // Reset color to default (remove inline style)
@@ -100,6 +103,8 @@ $(document).ready(function() {
       // 'width': '50vw',
       'height': 'auto'
     });
+
+    
 
   });
 
