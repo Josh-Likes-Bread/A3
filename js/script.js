@@ -14,6 +14,7 @@ $(document).ready(function() {
       var topPos = e.pageY - ($currentEventDiv.outerHeight() / 2);
 
 
+
       $currentEventDiv.css({
         "top": topPos + "px",
         "left": leftPos + "px",
@@ -82,7 +83,7 @@ $(document).ready(function() {
     });
 
 
-    //chatterino
+//chatterino-----------
 
     // Reset button color to default
     $(this).find('.myButton').css({
@@ -92,28 +93,65 @@ $(document).ready(function() {
   $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
 });
 
+//-----------------------------------------------------------------------
+
+
+
+
+
+
   $('.event').on('click', function() {
-    // Find the button within the clicked div and change its color to blue
-    $(this).find('.myButton').css({
-      'color': 'blue'
-    });
 
     $(eventDivs[fourthIndex]).css({
-      // "background-color": "black",
-      // 'width': '50vw',
       'height': 'auto'
     });
 
+
+//Ali with the assist---------------------------
+
+    var expandingDiv = $(eventDivs[fourthIndex])
+    var bodyWidth = $('body').width();
+    var bodyHeight = $('body').height();
+    var expandingDivOffset = {
+          "top":expandingDiv.offset().top,
+          "bottom":expandingDiv.offset().top + expandingDiv.height(),
+          "left":expandingDiv.offset().left,
+          "right":expandingDiv.offset().left + expandingDiv.width()
+        }
+
+        console.log(expandingDivOffset)
+      
     
+    if (expandingDivOffset.left < 0 ){
+      expandingDiv.css({ 
+        "left": "0px"
+       })
+    }
+
+    if (expandingDivOffset.right > bodyWidth){
+      expandingDiv.css({ 
+        "left": "auto",
+        "right":"0px"
+       })
+    }
+
+    if (expandingDivOffset.top < bodyHeight){
+      expandingDiv.css({ 
+        "top":"auto",
+        "top":"0px"
+       })
+    }
+
+    if (expandingDivOffset.bottom > bodyHeight){
+      expandingDiv.css({ 
+        "top":"auto",
+        "bottom": "0px"
+      })
+    }
 
   });
 
 });
-
-
-
-
-
 
 
 //failsafe

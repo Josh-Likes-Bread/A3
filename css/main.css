@@ -111,8 +111,8 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-    .GD{
-        /* text-transform:uppercase;
+    /* .GD{
+        text-transform:uppercase;
         padding-top: 5vh;
         font-size: 10vw;
         font-size: 7rem;
@@ -122,9 +122,8 @@ a:hover {
         font-weight: 300;
         border: none;
         width: auto;
-        color: blue; */
-    }
-
+        color: blue;
+    } */
 
     body{
         overflow-y: visible;
