@@ -135,9 +135,8 @@ $(document).ready(function() {
        })
     }
 
-    if (expandingDivOffset.top < bodyHeight){
+    if (expandingDivOffset.top < 0){
       expandingDiv.css({ 
-        "top":"auto",
         "top":"0px"
        })
     }
