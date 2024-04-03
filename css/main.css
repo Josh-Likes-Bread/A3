@@ -110,26 +110,6 @@ a:hover {
     /* border: black solid 1px; */
 }
 
-@media (max-width: 768px) {
-    /* .GD{
-        text-transform:uppercase;
-        padding-top: 5vh;
-        font-size: 10vw;
-        font-size: 7rem;
-        line-height: 12rem;
-        font-family: "roc-grotesk", sans-serif;
-        font-family: "Redaction";
-        font-weight: 300;
-        border: none;
-        width: auto;
-        color: blue;
-    } */
-
-    body{
-        overflow-y: visible;
-    }
-}
-
 #titles h2 {
     font-size: 2rem;
     font-family: "roc-grotesk";
@@ -213,4 +193,9 @@ color: gray;
     border: 1px solid black; /* Adjust border width and color as needed */
   }
 
+  @media (max-width: 720px) {
+ .GD{
+    color: blue;
+ }
+}
 

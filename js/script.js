@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+  var mediaQuery = window.matchMedia('(max-width: 720px)');
+
+  // Check if media query matches initially
+  if (mediaQuery.matches) {
+    // Stop JavaScript execution if media query matches
+    return;
+  }
+
   var eventDivs = $('.event');
   var currentIndex = 0;
   var isActive = false;
@@ -151,6 +159,7 @@ $(document).ready(function() {
     }
 
   });
+
 
 });
 
