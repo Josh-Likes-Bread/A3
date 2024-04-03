@@ -48,16 +48,19 @@ $(document).ready(function() {
       $(eventDivs[currentIndex]).css({
         // "background-color": "black",
         "transform":"scale(1)",
+        "cursor": "nesw-resize"
       });
       
       $(eventDivs[secondIndex]).css({
         // "background-color": "blue",
         "transform":"scale(0.65)",
+        "cursor": "nesw-resize"
       });
 
       $(eventDivs[thirdIndex]).css({
         // "background-color": "red",
         "transform":"scale(0.75)",
+        "cursor": "nesw-resize"
       });
 
       $(eventDivs[fourthIndex]).css({
@@ -96,16 +99,15 @@ $(document).ready(function() {
 //-----------------------------------------------------------------------
 
 
-
-
-
-
   $('.event').on('click', function() {
 
     $(eventDivs[fourthIndex]).css({
       'height': 'auto'
     });
 
+    $("section:hover").css({
+      "cursor": "pointer"
+    })
 
 //Ali with the assist---------------------------
 

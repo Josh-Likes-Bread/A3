@@ -156,7 +156,8 @@ section{
 }
 
 section:hover{
-    cursor: url(../images/cursor/expand.png);
+    cursor: nesw-resize;
+    /* cursor: url(../images/cursor/expand.png),auto; */
 }
 
 #anther_kiley{
@@ -211,3 +212,5 @@ color: gray;
 .images img {
     border: 1px solid black; /* Adjust border width and color as needed */
   }
+
+
