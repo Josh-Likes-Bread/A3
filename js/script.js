@@ -1,165 +1,171 @@
 $(document).ready(function() {
 
-  var mediaQuery = window.matchMedia('(max-width: 720px)');
-
-  // Check if media query matches initially
-  if (mediaQuery.matches) {
-    // Stop JavaScript execution if media query matches
-    return;
-  }
-
   var eventDivs = $('.event');
   var currentIndex = 0;
   var isActive = false;
-  var secondIndex = 1
-  var thirdIndex = 2
-  var fourthIndex = 3
+  var secondIndex = 1;
+  var thirdIndex = 2;
+  var fourthIndex = 3;
 
-  $(document).on('mousemove', function(e) {
-    if (!isActive) {
-      var $currentEventDiv = $(eventDivs[currentIndex]);
-      var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
-      var topPos = e.pageY - ($currentEventDiv.outerHeight() / 2);
+  $(window).resize(function() {
+    console.log("Window resized!");
+    var mediaQuery = window.matchMedia('(max-width: 1024px)');
+    if (mediaQuery.matches) {
+      console.log("Media query matches (max-width: 1024px)");
 
+      return; // Stop further execution of the event handler
 
+    } else {
 
-      $currentEventDiv.css({
-        "top": topPos + "px",
-        "left": leftPos + "px",
-        "z-index": 9999,
-        "font-family": "RedactionReg",
-        "font-size": "8pt",
-        "line-height": "12pt",
-        "text-decoration": "none",
-        // "height": "30vh",
-        // "width": "35em"
-      });
+      console.log("Media query doesn't match (min-width: 721px)");
+      // Continue with the rest of the event handler
 
-      //making the divs go back to their original size on mouseleave//
-
-      $('#anther_kiley').css({
-        'height': '26vh'
-      })
-
-      $('#takahashi_kuan').css({
-        'height': '32vh'
-      })
-
-      $('#e_roon_kang').css({
-        'height': '32vh'
-      })
-
-      $('#sebastian_aubin').css({
-        'height': '28vh'
-      })
-
-      $(eventDivs[currentIndex]).css({
-        // "background-color": "black",
-        "transform":"scale(1)",
-        "cursor": "nesw-resize"
-      });
-      
-      $(eventDivs[secondIndex]).css({
-        // "background-color": "blue",
-        "transform":"scale(0.65)",
-        "cursor": "nesw-resize"
-      });
-
-      $(eventDivs[thirdIndex]).css({
-        // "background-color": "red",
-        "transform":"scale(0.75)",
-        "cursor": "nesw-resize"
-      });
-
-      $(eventDivs[fourthIndex]).css({
-        // "background-color": "green",
-        "transform":"scale(0.85)",
-      });
-
-      currentIndex = (currentIndex + 1) % eventDivs.length;
-      secondIndex = (secondIndex + 1) % eventDivs.length;
-      thirdIndex = (thirdIndex + 1) % eventDivs.length;
-      fourthIndex = (fourthIndex + 1) % eventDivs.length;
-      isActive = true;
-    }
-  });
-
-  
-
-  $('.event').on('mouseleave', function() {
-    isActive = false;
-
-    $('.event').css({
-      "z-index": 1,
-    });
-
-
-//chatterino-----------
-
-    // Reset button color to default
-    $(this).find('.myButton').css({
-      'color': '' // Reset color to default (remove inline style)
-    });
-
-  $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
-});
-
-//-----------------------------------------------------------------------
-
-
-  $('.event').on('click', function() {
-
-    $(eventDivs[fourthIndex]).css({
-      'height': 'auto'
-    });
-
-    $("section:hover").css({
-      "cursor": "pointer"
-    })
-
-//Ali with the assist---------------------------
-
-    var expandingDiv = $(eventDivs[fourthIndex])
-    var bodyWidth = $('body').width();
-    var bodyHeight = $('body').height();
-    var expandingDivOffset = {
-          "top":expandingDiv.offset().top,
-          "bottom":expandingDiv.offset().top + expandingDiv.height(),
-          "left":expandingDiv.offset().left,
-          "right":expandingDiv.offset().left + expandingDiv.width()
+      $(document).on('mousemove', function(e) {
+        if (!isActive) {
+          var $currentEventDiv = $(eventDivs[currentIndex]);
+          var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
+          var topPos = e.pageY - ($currentEventDiv.outerHeight() / 2);
+    
+    
+    
+          $currentEventDiv.css({
+            "top": topPos + "px",
+            "left": leftPos + "px",
+            "z-index": 9999,
+            "font-family": "RedactionReg",
+            "font-size": "8pt",
+            "line-height": "12pt",
+            "text-decoration": "none",
+            // "height": "30vh",
+            // "width": "35em"
+          });
+    
+          //making the divs go back to their original size on mouseleave//
+    
+          $('#anther_kiley').css({
+            'height': '26vh'
+          })
+    
+          $('#takahashi_kuan').css({
+            'height': '32vh'
+          })
+    
+          $('#e_roon_kang').css({
+            'height': '32vh'
+          })
+    
+          $('#sebastian_aubin').css({
+            'height': '28vh'
+          })
+    
+          $(eventDivs[currentIndex]).css({
+            // "background-color": "black",
+            "transform":"scale(1)",
+            "cursor": "nesw-resize"
+          });
+          
+          $(eventDivs[secondIndex]).css({
+            // "background-color": "blue",
+            "transform":"scale(0.65)",
+            "cursor": "nesw-resize"
+          });
+    
+          $(eventDivs[thirdIndex]).css({
+            // "background-color": "red",
+            "transform":"scale(0.75)",
+            "cursor": "nesw-resize"
+          });
+    
+          $(eventDivs[fourthIndex]).css({
+            // "background-color": "green",
+            "transform":"scale(0.85)",
+          });
+    
+          currentIndex = (currentIndex + 1) % eventDivs.length;
+          secondIndex = (secondIndex + 1) % eventDivs.length;
+          thirdIndex = (thirdIndex + 1) % eventDivs.length;
+          fourthIndex = (fourthIndex + 1) % eventDivs.length;
+          isActive = true;
         }
-
-        console.log(expandingDivOffset)
+      });
+    
       
     
-    if (expandingDivOffset.left < 0 ){
-      expandingDiv.css({ 
-        "left": "0px"
-       })
+      $('.event').on('mouseleave', function() {
+        isActive = false;
+    
+        $('.event').css({
+          "z-index": 1,
+        });
+    
+    
+    //chatterino-----------
+    
+        // Reset button color to default
+        $(this).find('.myButton').css({
+          'color': '' // Reset color to default (remove inline style)
+        });
+    
+      $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
+    });
+    
+    //-----------------------------------------------------------------------
+    
+    
+      $('.event').on('click', function() {
+    
+        $(eventDivs[fourthIndex]).css({
+          'height': 'auto'
+        });
+    
+        $("section:hover").css({
+          "cursor": "pointer"
+        })
+    
+    //Ali with the assist---------------------------
+    
+        var expandingDiv = $(eventDivs[fourthIndex])
+        var bodyWidth = $('body').width();
+        var bodyHeight = $('body').height();
+        var expandingDivOffset = {
+              "top":expandingDiv.offset().top,
+              "bottom":expandingDiv.offset().top + expandingDiv.height(),
+              "left":expandingDiv.offset().left,
+              "right":expandingDiv.offset().left + expandingDiv.width()
+            }
+    
+            console.log(expandingDivOffset)
+          
+        
+        if (expandingDivOffset.left < 0 ){
+          expandingDiv.css({ 
+            "left": "0px"
+           })
+        }
+    
+        if (expandingDivOffset.right > bodyWidth){
+          expandingDiv.css({ 
+            "left": "auto",
+            "right":"0px"
+           })
+        }
+    
+        if (expandingDivOffset.top < 0){
+          expandingDiv.css({ 
+            "top":"0px"
+           })
+        }
+    
+        if (expandingDivOffset.bottom > bodyHeight){
+          expandingDiv.css({ 
+            "top":"auto",
+            "bottom": "0px"
+          })
+        }
+    
+      });
     }
-
-    if (expandingDivOffset.right > bodyWidth){
-      expandingDiv.css({ 
-        "left": "auto",
-        "right":"0px"
-       })
-    }
-
-    if (expandingDivOffset.top < 0){
-      expandingDiv.css({ 
-        "top":"0px"
-       })
-    }
-
-    if (expandingDivOffset.bottom > bodyHeight){
-      expandingDiv.css({ 
-        "top":"auto",
-        "bottom": "0px"
-      })
-    }
-
   });
-
 
 });
 

@@ -193,9 +193,49 @@ color: gray;
     border: 1px solid black; /* Adjust border width and color as needed */
   }
 
-  @media (max-width: 720px) {
+  @media (max-width: 1024px) {
+
+    body{
+        overflow: scroll;
+    }
  .GD{
     color: blue;
+    font-size: 21vw;
+    line-height: 11vh;
  }
+ section{
+    line-height: 10pt;
+    font-size: x-small;
+    width: 80vw;
+    border: solid black 1px;
+    padding: 2em;
+    background-color: white;
+    color: black;
+    position:relative;
+    height: 20vh;
+    margin-bottom: 5vh;
+    left: 50%; /* Align the left side of the section to the horizontal center */
+    transform: translateX(-50%); /* Center the section horizontally */
 }
+
+#anther_kiley{
+height: auto;
+}
+
+#takahashi_kuan{
+    height: auto;
+}
+
+#e_roon_kang{
+    height: auto;
+}
+
+#sebastian_aubin{
+    height: auto;
+}
+
+  }
+
+
+
 
