@@ -72,15 +72,21 @@ a:hover {
 
 
 .RM{
-    font-size: 3vw;
+    font-size: 2vw;
     font-family: "roc-grotesk";
     font-weight: 300;
     font-style: bold;
-    width: 40%;
-    height: 100%;
+    display:inline-block;
     padding-left: 2vw;
     border: solid 1px black;
-    border-bottom: none;
+    background-color: white;
+    position: absolute;
+    height: auto;
+    margin-top: 3vh;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-left: 1vw;
 
 }
 
@@ -101,23 +107,32 @@ a:hover {
 .GD{
     text-transform:uppercase;
     padding-top: 4vh;
-    font-size: 21vw;
+    font-size: 18vw;
     line-height: 32vh;
     /* font-family: "roc-grotesk", sans-serif; */
     font-family: "Redaction";
     font-weight: 300;
-    border:1px black solid;
+    border: 1px black solid;
+    display:inline-block;
+    margin-top: 8vh;
+    margin-left: 6vw;
+
+
     /* border: black solid 1px; */
 }
 
 #titles h2 {
-    font-size: 2rem;
     font-family: "roc-grotesk";
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: 300;
-    font-style: normal;
-    padding-left: 1.75vw;
-    margin-top: 2vh;
+    border: 1px black solid;
+    display: inline-block;
+    height: auto;
+    position: absolute;
+    background-color: white;
+    right: 5vw;
+    margin-top: 75vh;
+    padding: 1vw;
     /* border: 1px solid black; */
 
 }
@@ -162,24 +177,6 @@ p{
 
 
 
-
-/* extra memes */
-
-.myButton{
-float: right;
-text-decoration: none;
-border: none;
-padding: 2px;
-background-color: white;
-font-size: 0.5rem;
-font-family: "roc-grotesk";
-color: gray;
-}
-
-.myButton:hover{
-    color: red;
-}
-
 .external_links{
     width: 100%;
 }
@@ -211,27 +208,26 @@ color: gray;
     padding: 2em;
     background-color: white;
     color: black;
-    position:relative;
+    position:static !important;
     height: 20vh;
     margin-bottom: 5vh;
-    left: 50%; /* Align the left side of the section to the horizontal center */
-    transform: translateX(-50%); /* Center the section horizontally */
+    transform: scale(1) !important; /* Center the section horizontally */
 }
 
 #anther_kiley{
-height: auto;
+height: auto !important;
 }
 
 #takahashi_kuan{
-    height: auto;
+    height: auto !important;
 }
 
 #e_roon_kang{
-    height: auto;
+    height: auto !important;
 }
 
 #sebastian_aubin{
-    height: auto;
+    height: auto !important;
 }
 
   }
