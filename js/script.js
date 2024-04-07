@@ -10,34 +10,99 @@ $(document).ready(function() {
       $(document).on('mousemove', function(e) {
 
 
-// --------------getting horizontal and vertical distance between .LS and mouse--------------------
         var mouseX = e.pageX;
         var mouseY = e.pageY;
 
-        // Get the position of the .LS element
-        var lsElement = $('.LS');
-        var lsX = lsElement.offset().left + lsElement.outerWidth() / 2;
-        var lsY = lsElement.offset().top + lsElement.outerWidth() / 2;
+// -------------- this makes RM and LS move--------------------
+//         // Get the position of the .LS element
+//         var lsElement = $('.LS');
+//         var lsX = lsElement.offset().left;
+//         var lsY = lsElement.offset().top;
     
-        // Calculate the distance between the mouse X offset and the .LS element's X offset
-        var distanceX = Math.abs(mouseX - lsX);
-        var distanceY = Math.abs(mouseY - lsY);
+//         // Calculate the distance between the mouse X offset and the .LS element's X offset
+//         var distanceX = Math.abs(mouseX - lsX);
+//         var distanceY = Math.abs(mouseY - lsY);
+
+
+// // ---------------------------------------------------------------------------------------------------
+//         var newX = lsX -  (distanceX / 8);
+//         var newY = lsY -  (distanceY / 8);
+
+
+//         $(lsElement).css({
+//           "top": newY/8 + "px",
+//           "left": newX/8 + "px"
+//         })
+
+
+
+//         // --------------.RM ?????? WORKS (Kinda)--------------------
+//         // Get the position of the .RM element
+//         var rmElement = $('.RM');
+//         var rmX = rmElement.offset().left;
+//         var rmY = rmElement.offset().top;
     
-        console.log('Horizontal Distance:', distanceX);
-        console.log('Vertical Distance:', distanceY);
+//         // Calculate the distance between the mouse X offset and the .RM element's X offset
+//         var rmdistanceX = Math.abs(mouseX - rmX);
+//         var rmdistanceY = Math.abs(mouseY - rmY);
 
-// ---------------------------------------------------------------------------------------------------
-        var newX = lsX -  (distanceX / 8);
-        var newY = lsY -  (distanceY / 8);
+//         var newrmX = rmX +  (rmdistanceX / 8);
+//         var newrmY = rmY +  (rmdistanceY / 8);
 
 
-        $(lsElement).css({
-          "top": newY/8 + "px",
-          "left": newX/8 + "px"
+//         $(rmElement).css({
+//           "top": newrmY/8 + "px",
+//           "left": newrmX/8 + "px"
+//         })
+
+// -------------------------------this makes GD move-------------------------------------
+
+        var gdElement = $('.GD');
+        var gdX = gdElement.offset().left;
+        var gdY = gdElement.offset().top;
+
+
+        // Calculate the distance between the mouse and the middle of .GD element
+        var gdXdistanceFromMiddle = Math.abs(mouseX - gdX) - gdElement.width()/2;
+        var gdYdistanceFromMiddle = Math.abs(mouseY - gdY) -  gdElement.height()/2;
+
+        var newgdX = gdX -  gdXdistanceFromMiddle;
+        var newgdY = gdY -  gdYdistanceFromMiddle ;
+
+        console.log("gd x distance",gdXdistanceFromMiddle)
+        console.log("gd y distance",gdYdistanceFromMiddle)
+
+
+        $('.GD').css({
+          "top": newgdY/75 + "px",
+          "left": newgdX/75 + "px",
         })
 
-        console.log('new vertical distance',newY);
+
+
+
         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

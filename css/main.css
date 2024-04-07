@@ -93,54 +93,56 @@ a:hover {
 
 .RM{
     font-size: 4vw;
-    font-family: "RedactionReg";
+    font-family: "roc-grotesk";
     font-weight: 300;
     font-style: bold;
     display:inline-block;
     border: solid 1px black;
-    background-color: mintcream;
+    background-color: white;
     position: absolute;
     height: auto;
     /* margin-top: 1vh; */
-    padding: 1rem;
+    padding: 1vw;
     margin-left: 1vw;
+    margin-top: 2vh;
     /* z-index: -2; */
 
 }
 
 .GD{
-    text-transform:uppercase;
+    text-transform: uppercase;
     padding-top: 4vh;
     font-size: 18vw;
     line-height: 32vh;
-    /* font-family: "roc-grotesk", sans-serif; */
-    font-family: "Redaction";
+    font-family: "RedactionReg";
     font-weight: 300;
     /* border: 1px black solid; */
-    display:inline-block;
+    display: inline-block;
     padding-top: 5vh;
-    margin-top: 11vh;
-    padding-bottom: 5vh;
-    margin-left: 6vw;
+    margin-top: 14vh;
+    padding: 4vh;
+    padding: 4vw;
+    margin-left: 4vw;
     background-color: white;
+    position: absolute;
+    z-index: -2;
 
 }
 
 .LS {
-    font-family: "RedactionReg";
+    font-family: "roc-grotesk";
     font-size: 3vw;
     font-weight: 300;
     border: 1px black solid;
     display: inline-block;
     height: auto;
     position: absolute;
-    background-color: mintcream;
-    margin-top: 70vh;
-    margin-left: 55vw;
+    background-color: white;
+    margin-top: 73vh;
+    margin-left: 58vw;
     /* right: 5vw; */
     /* margin-top: 79vh; */
     padding: 1vw;
-    /* border: 1px solid black; */
 
 }
 
@@ -150,7 +152,7 @@ section{
     width: 35em;
     border: solid black 1px;
     padding: 2em;
-    background-color: mintcream;
+    background-color: white;
     color: black;
     position:absolute;
     overflow: scroll;
