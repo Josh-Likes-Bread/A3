@@ -7,26 +7,44 @@ $(document).ready(function() {
   var thirdIndex = 2;
   var fourthIndex = 3;
 
-  // $(window).resize(function() {
-  //   console.log("Window resized!");
-  //   var mediaQuery = window.matchMedia('(max-width: 1024px)');
-  //   if (mediaQuery.matches) {
-  //     console.log("Media query matches (max-width: 1024px)");
-
-  //     return; // Stop further execution of the event handler
-
-  //   } else {
-
-      console.log("Media query doesn't match (min-width: 721px)");
-      // Continue with the rest of the event handler
-
       $(document).on('mousemove', function(e) {
+
+
+// --------------getting horizontal and vertical distance between .LS and mouse--------------------
+        var mouseX = e.pageX;
+        var mouseY = e.pageY;
+
+        // Get the position of the .LS element
+        var lsElement = $('.LS');
+        var lsX = lsElement.offset().left + lsElement.outerWidth() / 2;
+        var lsY = lsElement.offset().top + lsElement.outerWidth() / 2;
+    
+        // Calculate the distance between the mouse X offset and the .LS element's X offset
+        var distanceX = Math.abs(mouseX - lsX);
+        var distanceY = Math.abs(mouseY - lsY);
+    
+        console.log('Horizontal Distance:', distanceX);
+        console.log('Vertical Distance:', distanceY);
+
+// ---------------------------------------------------------------------------------------------------
+        var newX = lsX -  (distanceX / 8);
+        var newY = lsY -  (distanceY / 8);
+
+
+        $(lsElement).css({
+          "top": newY/8 + "px",
+          "left": newX/8 + "px"
+        })
+
+        console.log('new vertical distance',newY);
+        
+
+
+
         if (!isActive) {
           var $currentEventDiv = $(eventDivs[currentIndex]);
           var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
           var topPos = e.pageY - ($currentEventDiv.outerHeight() / 2);
-    
-    
     
           $currentEventDiv.css({
             "top": topPos + "px",
@@ -101,10 +119,6 @@ $(document).ready(function() {
     
     //chatterino-----------
     
-        // Reset button color to default
-        $(this).find('.myButton').css({
-          'color': '' // Reset color to default (remove inline style)
-        });
     
       $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
     });
@@ -164,13 +178,135 @@ $(document).ready(function() {
         }
     
       });
-    // }
+
   });
 
-// });
 
 
-//failsafe
+// ---------------------------------------------------------
+
+            //----------asking chat to caluculate the distance between .RM div and mouse-------
+      // var mouseX = e.pageX;
+      // var mouseY = e.pageY;
+  
+      // // Get the position of the .RM element
+      // var rmElement = $('.RM');
+      // var rmElementX = rmElement.offset().left + rmElement.outerWidth() / 2;
+      // var rmElementY = rmElement.offset().top + rmElement.outerHeight() / 2;
+  
+      // // Calculate the distance between the mouse and the .RM element
+      // var rmdistance = Math.sqrt(Math.pow(mouseX - rmElementX, 2) + Math.pow(mouseY - rmElementY, 2));
+  
+  
+      // // Log the distance
+      // // console.log('Distance:', rmdistance);
+  
+      // // -----------------------------
+        
+      //       // Get the position of the .LM element
+      //       var lsElement = $('.LS');
+      //       var lsElementX = lsElement.offset().left + lsElement.outerWidth() / 2;
+      //       var lsElementY = lsElement.offset().top + lsElement.outerHeight() / 2;
+        
+      //       // Calculate the distance between the mouse and the .RM element
+      //       var lsdistance = Math.sqrt(Math.pow(mouseX - lsElementX, 2) + Math.pow(mouseY - lsElementY, 2));
+        
+        
+      //       // Log the distance
+      //       console.log('Distance:', lsdistance);
+        
+      //       // ----------------------------- test
+
+      //       var lsX = lsElement.offset().left
+      //       var lsY = lsElement.offset().top
+
+
+      //       lsElement.css({
+      //         "top": mouseX - lsdistance,
+      //       })
+
+            // ----------------------------
+
+
+//         if (rmdistance < 400){
+//           $('.RM').css({
+//             "font-family": "RedactionReg",
+//           })
+//         }
+
+//         if (rmdistance > 400){
+//           $('.RM').css({
+//             "font-family": "Redaction35",
+//           })
+//         }
+
+//         if (rmdistance > 500){
+//           $('.RM').css({
+//             "font-family": "Redaction50",
+//           })
+//         }
+
+//         if (rmdistance > 700){
+//           $('.RM').css({
+//             "font-family": "Redaction70",
+//           })
+//         }
+
+//         if (rmdistance > 1000){
+//           $('.RM').css({
+//             "font-family": "Redaction",
+//           })
+//         }
+
+// // ----------LS------------------------
+
+//         if (lsdistance < 400){
+//           $('.LS').css({
+//             "font-family": "RedactionReg",
+//           })
+//         }
+
+//         if (lsdistance > 400){
+//           $('.LS').css({
+//             "font-family": "Redaction35",
+//           })
+//         }
+
+//         if (lsdistance > 500){
+//           $('.LS').css({
+//             "font-family": "Redaction50",
+//           })
+//         }
+
+//         if (lsdistance > 700){
+//           $('.LS').css({
+//             "font-family": "Redaction70",
+//           })
+//         }
+
+//         if (lsdistance > 1000){
+//           $('.LS').css({
+//             "font-family": "Redaction",
+//           })
+//         }
+
+//kill switch-----------------------------------------------
+  // $(window).resize(function() {
+  //   console.log("Window resized!");
+  //   var mediaQuery = window.matchMedia('(max-width: 1024px)');
+  //   if (mediaQuery.matches) {
+  //     console.log("Media query matches (max-width: 1024px)");
+
+  //     return; // Stop further execution of the event handler
+
+  //   } else {
+
+      // console.log("Media query doesn't match (min-width: 721px)");
+      // Continue with the rest of the event handler
+// --------------------------------------------------------------------
+
+
+//failsafe--------------------------------------------------------------
 
 
 // $(document).ready(function() {
@@ -271,7 +407,7 @@ $(document).ready(function() {
 // });
 
 
-// extra memes
+// extra-----------------------------------------------------------
 
 
 // $('.event').on('click', function() {
@@ -332,7 +468,7 @@ $(document).ready(function() {
 
 
 
-// ---------------------- memes----------------
+// ---------------------- extras----------------
 
 // $(document).ready(function() {
 //   $(document).on('mousemove', function(e) {
@@ -358,7 +494,7 @@ $(document).ready(function() {
 
 
 
-//----------------------more memes---------------------
+//----------------------more extras---------------------
 
 // $(document).ready(function() {
 //   var eventDivs = [];

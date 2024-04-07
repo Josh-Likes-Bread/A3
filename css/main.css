@@ -8,6 +8,26 @@
     src: url("../webfonts/Redaction-Regular.woff2") format('woff2');
   }
 
+  @font-face {
+    font-family: "Redaction20";
+    src: url("../webfonts/Redaction_20-Regular.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: "Redaction35";
+    src: url("../webfonts/Redaction_35-Regular.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: "Redaction50";
+    src: url("../webfonts/Redaction_50-Regular.woff2") format('woff2');
+  }
+
+  @font-face {
+    font-family: "Redaction70";
+    src: url("../webfonts/Redaction_70-Regular.woff2") format('woff2');
+  }
+
 *{
     margin: 0;
     padding: 0;
@@ -72,37 +92,21 @@ a:hover {
 
 
 .RM{
-    font-size: 2vw;
-    font-family: "roc-grotesk";
+    font-size: 4vw;
+    font-family: "RedactionReg";
     font-weight: 300;
     font-style: bold;
     display:inline-block;
-    padding-left: 2vw;
     border: solid 1px black;
-    background-color: white;
+    background-color: mintcream;
     position: absolute;
     height: auto;
-    margin-top: 3vh;
-    padding: 0.5rem;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    /* margin-top: 1vh; */
+    padding: 1rem;
     margin-left: 1vw;
+    /* z-index: -2; */
 
 }
-
-/* .line{
-
-    border-top: 1px black solid;
-    width: 60vw;
-
-} */
-
-/* .line2{
-
-    border-top: 1px black solid;
-    margin-top: 4vh;
-
-} */
 
 .GD{
     text-transform:uppercase;
@@ -112,26 +116,29 @@ a:hover {
     /* font-family: "roc-grotesk", sans-serif; */
     font-family: "Redaction";
     font-weight: 300;
-    border: 1px black solid;
+    /* border: 1px black solid; */
     display:inline-block;
-    margin-top: 8vh;
+    padding-top: 5vh;
+    margin-top: 11vh;
+    padding-bottom: 5vh;
     margin-left: 6vw;
+    background-color: white;
 
-
-    /* border: black solid 1px; */
 }
 
-#titles h2 {
-    font-family: "roc-grotesk";
+.LS {
+    font-family: "RedactionReg";
     font-size: 3vw;
     font-weight: 300;
     border: 1px black solid;
     display: inline-block;
     height: auto;
     position: absolute;
-    background-color: white;
-    right: 5vw;
-    margin-top: 75vh;
+    background-color: mintcream;
+    margin-top: 70vh;
+    margin-left: 55vw;
+    /* right: 5vw; */
+    /* margin-top: 79vh; */
     padding: 1vw;
     /* border: 1px solid black; */
 
@@ -143,7 +150,7 @@ section{
     width: 35em;
     border: solid black 1px;
     padding: 2em;
-    background-color: white;
+    background-color: mintcream;
     color: black;
     position:absolute;
     overflow: scroll;
