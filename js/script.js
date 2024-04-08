@@ -7,71 +7,30 @@ $(document).ready(function() {
   var thirdIndex = 2;
   var fourthIndex = 3;
 
+  //---- this changes bg to what ever image you click -----------------
+
   $('.images img').on('click', function() {
     var imageUrl = $(this).attr('src');
 
     $('body').css('background-image', 'url(' + imageUrl + ')');
 });
+// -------------------------------------------------------------------------
 
       $(document).on('mousemove', function(e) {
-
 
         var mouseX = e.pageX;
         var mouseY = e.pageY;
 
-
-// -------------- this makes RM and LS move--------------------
-//         // Get the position of the .LS element
-//         var lsElement = $('.LS');
-//         var lsX = lsElement.offset().left;
-//         var lsY = lsElement.offset().top;
-    
-//         // Calculate the distance between the mouse X offset and the .LS element's X offset
-//         var distanceX = Math.abs(mouseX - lsX);
-//         var distanceY = Math.abs(mouseY - lsY);
-
-
-// // ---------------------------------------------------------------------------------------------------
-//         var newX = lsX -  (distanceX / 8);
-//         var newY = lsY -  (distanceY / 8);
-
-
-//         $(lsElement).css({
-//           "top": newY/8 + "px",
-//           "left": newX/8 + "px"
-//         })
-
-
-
-//         // --------------.RM ?????? WORKS (Kinda)--------------------
-//         // Get the position of the .RM element
-//         var rmElement = $('.RM');
-//         var rmX = rmElement.offset().left;
-//         var rmY = rmElement.offset().top;
-    
-//         // Calculate the distance between the mouse X offset and the .RM element's X offset
-//         var rmdistanceX = Math.abs(mouseX - rmX);
-//         var rmdistanceY = Math.abs(mouseY - rmY);
-
-//         var newrmX = rmX +  (rmdistanceX / 8);
-//         var newrmY = rmY +  (rmdistanceY / 8);
-
-
-//         $(rmElement).css({
-//           "top": newrmY/8 + "px",
-//           "left": newrmX/8 + "px"
-//         })
-
 // -------------------------------this makes GD move-------------------------------------
-
         var gdElement = $('.GD');
         var gdX = gdElement.offset().left;
         var gdY = gdElement.offset().top;
 
 
-        // Calculate the distance between the mouse and the middle of .GD element
+        // asking chat to calculate the distance between the mouse and the middle of .GD element
         var gdXdistanceFromMiddle = Math.abs(mouseX - gdX) - gdElement.width()/2;
         var gdYdistanceFromMiddle = Math.abs(mouseY - gdY) -  gdElement.height()/2;
+
 
         var newgdX = gdX -  gdXdistanceFromMiddle;
         var newgdY = gdY -  gdYdistanceFromMiddle ;
@@ -85,6 +44,10 @@ $(document).ready(function() {
           "left": newgdX/75 + "px",
         })
 
+        // ----------------------- this makes divs follow cursor  --------------------------------
+
+        //chat helped figure out arrays
+      
         if (!isActive) {
           var $currentEventDiv = $(eventDivs[currentIndex]);
           var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
@@ -169,14 +132,10 @@ $(document).ready(function() {
           'background-image': "none"
         })
     
-    
-    //chatterino-----------
-    
-    
-      $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
+      $(this).animate({ scrollTop: 0 }, 'fast');
     });
     
-    //-----------------------------------------------------------------------
+    //------------------------- this expands divs ----------------------------------------
     
     
       $('.event').on('click', function() {
@@ -189,7 +148,7 @@ $(document).ready(function() {
           "cursor": "default"
         })
     
-    //Ali with the assist---------------------------
+    //----Help from Ali
     
         var expandingDiv = $(eventDivs[fourthIndex])
         var bodyWidth = $('body').width();
@@ -201,7 +160,7 @@ $(document).ready(function() {
               "right":expandingDiv.offset().left + expandingDiv.width()
             }
     
-            console.log(expandingDivOffset)
+            // console.log(expandingDivOffset)
           
         
         if (expandingDivOffset.left < 0 ){
@@ -237,112 +196,49 @@ $(document).ready(function() {
 
 
 
-// ---------------------------------------------------------
 
-            //----------asking chat to caluculate the distance between .RM div and mouse-------
-      // var mouseX = e.pageX;
-      // var mouseY = e.pageY;
-  
-      // // Get the position of the .RM element
-      // var rmElement = $('.RM');
-      // var rmElementX = rmElement.offset().left + rmElement.outerWidth() / 2;
-      // var rmElementY = rmElement.offset().top + rmElement.outerHeight() / 2;
-  
-      // // Calculate the distance between the mouse and the .RM element
-      // var rmdistance = Math.sqrt(Math.pow(mouseX - rmElementX, 2) + Math.pow(mouseY - rmElementY, 2));
-  
-  
-      // // Log the distance
-      // // console.log('Distance:', rmdistance);
-  
-      // // -----------------------------
-        
-      //       // Get the position of the .LM element
-      //       var lsElement = $('.LS');
-      //       var lsElementX = lsElement.offset().left + lsElement.outerWidth() / 2;
-      //       var lsElementY = lsElement.offset().top + lsElement.outerHeight() / 2;
-        
-      //       // Calculate the distance between the mouse and the .RM element
-      //       var lsdistance = Math.sqrt(Math.pow(mouseX - lsElementX, 2) + Math.pow(mouseY - lsElementY, 2));
-        
-        
-      //       // Log the distance
-      //       console.log('Distance:', lsdistance);
-        
-      //       // ----------------------------- test
-
-      //       var lsX = lsElement.offset().left
-      //       var lsY = lsElement.offset().top
+// -------------- add this before GD section to make RM and LS move--------------------
+//         // Get the position of the .LS element
+//         var lsElement = $('.LS');
+//         var lsX = lsElement.offset().left;
+//         var lsY = lsElement.offset().top;
+    
+//         var distanceX = Math.abs(mouseX - lsX);
+//         var distanceY = Math.abs(mouseY - lsY);
 
 
-      //       lsElement.css({
-      //         "top": mouseX - lsdistance,
-      //       })
-
-            // ----------------------------
+// // ---------------------------------------------------------------------------------------------------
+//         var newX = lsX -  (distanceX / 8);
+//         var newY = lsY -  (distanceY / 8);
 
 
-//         if (rmdistance < 400){
-//           $('.RM').css({
-//             "font-family": "RedactionReg",
-//           })
-//         }
+//         $(lsElement).css({
+//           "top": newY/8 + "px",
+//           "left": newX/8 + "px"
+//         })
 
-//         if (rmdistance > 400){
-//           $('.RM').css({
-//             "font-family": "Redaction35",
-//           })
-//         }
 
-//         if (rmdistance > 500){
-//           $('.RM').css({
-//             "font-family": "Redaction50",
-//           })
-//         }
 
-//         if (rmdistance > 700){
-//           $('.RM').css({
-//             "font-family": "Redaction70",
-//           })
-//         }
+//         // --------------.RM ?????? WORKS (Kinda)--------------------
+//         var rmElement = $('.RM');
+//         var rmX = rmElement.offset().left;
+//         var rmY = rmElement.offset().top;
+    
+//         var rmdistanceX = Math.abs(mouseX - rmX);
+//         var rmdistanceY = Math.abs(mouseY - rmY);
 
-//         if (rmdistance > 1000){
-//           $('.RM').css({
-//             "font-family": "Redaction",
-//           })
-//         }
+//         var newrmX = rmX +  (rmdistanceX / 8);
+//         var newrmY = rmY +  (rmdistanceY / 8);
 
-// // ----------LS------------------------
 
-//         if (lsdistance < 400){
-//           $('.LS').css({
-//             "font-family": "RedactionReg",
-//           })
-//         }
+//         $(rmElement).css({
+//           "top": newrmY/8 + "px",
+//           "left": newrmX/8 + "px"
+//         })
 
-//         if (lsdistance > 400){
-//           $('.LS').css({
-//             "font-family": "Redaction35",
-//           })
-//         }
 
-//         if (lsdistance > 500){
-//           $('.LS').css({
-//             "font-family": "Redaction50",
-//           })
-//         }
 
-//         if (lsdistance > 700){
-//           $('.LS').css({
-//             "font-family": "Redaction70",
-//           })
-//         }
 
-//         if (lsdistance > 1000){
-//           $('.LS').css({
-//             "font-family": "Redaction",
-//           })
-//         }
 
 //kill switch-----------------------------------------------
   // $(window).resize(function() {
@@ -357,108 +253,6 @@ $(document).ready(function() {
 
       // console.log("Media query doesn't match (min-width: 721px)");
       // Continue with the rest of the event handler
-// --------------------------------------------------------------------
-
-
-//failsafe--------------------------------------------------------------
-
-
-// $(document).ready(function() {
-
-//   var eventDivs = $('.event');
-//   var currentIndex = 0;
-//   var isActive = false;
-//   var secondIndex = 1
-//   var thirdIndex = 2
-//   var fourthIndex = 3
-
-//   $(document).on('mousemove', function(e) {
-//     if (!isActive) {
-//       var $currentEventDiv = $(eventDivs[currentIndex]);
-//       var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
-//       var topPos = e.pageY - ($currentEventDiv.outerHeight() / 2);
-
-
-//       $currentEventDiv.css({
-//         "top": topPos + "px",
-//         "left": leftPos + "px",
-//         "z-index": 9999,
-//         "font-family": "RedactionReg",
-//         "font-size": "8pt",
-//         "line-height": "12pt",
-//         "text-decoration": "none",
-//         "height": "30vh",
-//         "width": "35em"
-//       });
-
-//       $(eventDivs[currentIndex]).css({
-//         // "background-color": "black",
-//         "transform":"scale(1)",
-//         "height": "30vh",
-//         "width": "35em"
-//       });
-      
-//       $(eventDivs[secondIndex]).css({
-//         // "background-color": "blue",
-//         "transform":"scale(0.65)",
-//         "height": "30vh",
-//         "width": "35em"
-//       });
-
-//       $(eventDivs[thirdIndex]).css({
-//         // "background-color": "red",
-//         "transform":"scale(0.75)",
-//         "height": "30vh",
-//         "width": "35em"
-//       });
-
-//       $(eventDivs[fourthIndex]).css({
-//         // "background-color": "green",
-//         "transform":"scale(0.85)",
-//         "height": "30vh",
-//         "width": "35em"
-//       });
-
-//       currentIndex = (currentIndex + 1) % eventDivs.length;
-//       secondIndex = (secondIndex + 1) % eventDivs.length;
-//       thirdIndex = (thirdIndex + 1) % eventDivs.length;
-//       fourthIndex = (fourthIndex + 1) % eventDivs.length;
-//       isActive = true;
-//     }
-//   });
-
-  
-
-//   $('.event').on('mouseleave', function() {
-//     isActive = false;
-
-//     $('.event').css({
-//       "z-index": 1,
-//     });
-
-//     // Reset button color to default
-//     $(this).find('.myButton').css({
-//       'color': '' // Reset color to default (remove inline style)
-//     });
-
-//   $(this).animate({ scrollTop: 0 }, 'fast'); // Adjust speed as needed
-// });
-
-//   $('.event').on('click', function() {
-//     // Find the button within the clicked div and change its color to blue
-//     $(this).find('.myButton').css({
-//       'color': 'blue'
-//     });
-
-//     $(eventDivs[fourthIndex]).css({
-//       // "background-color": "black",
-//       // 'width': '50vw',
-//       'height': '80vh'
-//     });
-
-//   });
-
-// });
 
 
 // extra-----------------------------------------------------------
@@ -470,8 +264,6 @@ $(document).ready(function() {
 //     'color': 'blue'
 //   });
 // });
-
-
 
 // $(document).ready(function() {
 //   // Array to store all event divs
@@ -508,20 +300,6 @@ $(document).ready(function() {
 // });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ---------------------- extras----------------
 
 // $(document).ready(function() {
@@ -542,11 +320,6 @@ $(document).ready(function() {
 //     }
 //   });
 // });
-
-
-
-
-
 
 //----------------------more extras---------------------
 
