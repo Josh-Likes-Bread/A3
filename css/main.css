@@ -329,7 +329,7 @@ p{
         margin-bottom: 2vh;
         margin-left: auto;
         margin-right: auto;
-        transform: scale(1) !important; /* Center the section horizontally */
+        transform: scale(1) !important; 
     }
 
     #anther_kiley{
