@@ -144,7 +144,7 @@ a:hover {
     padding: 4vh;
     padding: 4vw;
     margin-left: 4vw;
-    background-color: white;
+    /* background-color: white; */
     position: absolute;
     z-index: -2;
 
@@ -221,57 +221,142 @@ p{
 }
 
 .images img {
-    border: 1px solid black; /* Adjust border width and color as needed */
+    border: 1px solid black;
   }
 
-  @media (max-width: 1024px) {
+
+
+
+/* this should work for all mobile devices since mobile does not have hover */
+  @media (hover: none) {
 
     body{
         overflow: scroll;
+        align-items: center;
+        padding:3vw;
     }
- .GD{
-    color: blue;
-    font-size: 21vw;
-    line-height: 11vh;
- }
- section{
-    line-height: 10pt;
-    font-size: x-small;
-    width: 80vw;
-    border: solid black 1px;
-    padding: 2em;
-    background-color: white;
-    color: black;
-    position:static !important;
-    height: 20vh;
-    margin-bottom: 5vh;
-    transform: scale(1) !important; /* Center the section horizontally */
-}
+    .RM{
+        position: static;
+        margin: 1vh;
+        padding: auto;
+    }
+    .GD{
+        font-size: 20vw;
+        line-height: 15vh;
+        position: static;
+        padding: 0;
+        margin: 1vh !important;
+    }
+    .LS{
+        position: static;
+        font-size: 4vw;
+        margin: 0vh;
+        margin-bottom: 4vh;
+        margin-left: 45vw;
+    }
+    section{
+        line-height: 14pt;
+        font-size: 16px;
+        width: 50vw;
+        border: solid black 1px;
+        padding: 2em;
+        background-color: white;
+        color: black;
+        position:static !important;
+        height: 20vh;
+        margin-bottom: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+        transform: scale(1) !important;
+    }
 
-#anther_kiley{
-height: auto !important;
-}
-
-#takahashi_kuan{
+    #anther_kiley{
     height: auto !important;
-}
+    }
 
-#e_roon_kang{
+    #takahashi_kuan{
+        height: auto !important;
+    }
+
+    #e_roon_kang{
+        height: auto !important;
+    }
+
+    #sebastian_aubin{
+        height: auto !important;
+    }
+
+    }
+
+
+    /*---------------------------- if smaller than 720 px---------------------- */
+
+    @media (max-width: 750px) {
+
+    body{
+        overflow: scroll;
+        align-items: center;
+    }
+    .RM{
+        position: static;
+        margin: 1vh;
+        padding: auto;
+    }
+    .GD{
+        font-size: 21vw;
+        line-height: 6vh;
+        position: static;
+        padding: 0;
+        margin: 1vh !important;
+    }
+    .LS{
+        position: static;
+        margin: 0vh;
+        font-size: 4vw;
+        margin-bottom: 1vh;
+        margin-left: 45vw;
+    }
+    section{
+        line-height: 14pt;
+        font-size: 16px;
+        width: 80vw;
+        border: solid black 1px;
+        padding: 2em;
+        background-color: white;
+        color: black;
+        position:static !important;
+        height: 20vh;
+        margin-bottom: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+        transform: scale(1) !important; /* Center the section horizontally */
+    }
+
+    #anther_kiley{
     height: auto !important;
-}
+    }
 
-#sebastian_aubin{
-    height: auto !important;
-}
+    #takahashi_kuan{
+        height: auto !important;
+    }
 
-  }
+    #e_roon_kang{
+        height: auto !important;
+    }
 
+    #sebastian_aubin{
+        height: auto !important;
+    }
 
-.active{
+    }
+
+/* .image{
     position: absolute;
+    border: 1px solid black;
+    height: 50%;
+    width: 50%;
     z-index: 1000;
-    transform: scale(3);
-}
+} */
 
 
 

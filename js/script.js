@@ -7,6 +7,11 @@ $(document).ready(function() {
   var thirdIndex = 2;
   var fourthIndex = 3;
 
+  $('.images img').on('click', function() {
+    var imageUrl = $(this).attr('src');
+
+    $('body').css('background-image', 'url(' + imageUrl + ')');
+});
 
       $(document).on('mousemove', function(e) {
 
@@ -187,6 +192,10 @@ $(document).ready(function() {
         $('.event').css({
           "z-index": 1,
         });
+
+        $("body").css({
+          'background-image': "none"
+        })
     
     
     //chatterino-----------
