@@ -7,11 +7,13 @@ $(document).ready(function() {
   var thirdIndex = 2;
   var fourthIndex = 3;
 
+
       $(document).on('mousemove', function(e) {
 
 
         var mouseX = e.pageX;
         var mouseY = e.pageY;
+
 
 // -------------- this makes RM and LS move--------------------
 //         // Get the position of the .LS element
@@ -144,24 +146,29 @@ $(document).ready(function() {
           $(eventDivs[currentIndex]).css({
             // "background-color": "black",
             "transform":"scale(1)",
-            "cursor": "nesw-resize"
+            "cursor": "nesw-resize",
+            "overflow": "scroll"
           });
           
           $(eventDivs[secondIndex]).css({
             // "background-color": "blue",
             "transform":"scale(0.65)",
-            "cursor": "nesw-resize"
+            "cursor": "nesw-resize",
+            "overflow": "hidden"
           });
     
           $(eventDivs[thirdIndex]).css({
             // "background-color": "red",
             "transform":"scale(0.75)",
-            "cursor": "nesw-resize"
+            "cursor": "nesw-resize",
+            "overflow": "hidden"
           });
     
           $(eventDivs[fourthIndex]).css({
             // "background-color": "green",
             "transform":"scale(0.85)",
+            "cursor": "nesw-resize",
+            "overflow": "hidden"
           });
     
           currentIndex = (currentIndex + 1) % eventDivs.length;
@@ -198,7 +205,7 @@ $(document).ready(function() {
         });
     
         $("section:hover").css({
-          "cursor": "pointer"
+          "cursor": "default"
         })
     
     //Ali with the assist---------------------------
