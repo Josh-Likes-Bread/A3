@@ -85,34 +85,6 @@ $(document).ready(function() {
           "left": newgdX/75 + "px",
         })
 
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         if (!isActive) {
           var $currentEventDiv = $(eventDivs[currentIndex]);
           var leftPos = e.pageX - ($currentEventDiv.outerWidth() / 2);
@@ -245,17 +217,18 @@ $(document).ready(function() {
            })
         }
     
-        if (expandingDivOffset.top < 0){
-          expandingDiv.css({ 
-            "top":"0px"
-           })
-        }
-    
         if (expandingDivOffset.bottom > bodyHeight){
           expandingDiv.css({ 
             "top":"auto",
             "bottom": "0px"
           })
+        }
+
+        if (expandingDivOffset.top < 0){
+          expandingDiv.css({ 
+            "top":"0px",
+            "bottom": "auto"
+           })
         }
     
       });
