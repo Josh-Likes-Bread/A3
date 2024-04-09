@@ -134,13 +134,13 @@ a:hover {
     text-transform: uppercase;
     padding-top: 4vh;
     font-size: 18vw;
-    line-height: 32vh;
+    line-height: 180pt;
     font-family: "RedactionReg";
     font-weight: 300;
     /* border: 1px black solid; */
     display: inline-block;
     padding-top: 5vh;
-    margin-top: 14vh;
+    margin-top: 16vh;
     padding: 4vh;
     padding: 4vw;
     margin-left: 4vw;
@@ -224,12 +224,17 @@ p{
     border: 1px solid black;
   }
 
+/* .image{
+    position: absolute;
+    border: 1px solid black;
+    height: 50%;
+    width: 50%;
+    z-index: 1000;
+} */
 
 
-/* ------------------------------------------------------------------media queries------------------------------------------------------------ */
 
-
-/* this should work for all mobile devices since mobile does not have hover */
+/*-----------------------------this should work for all mobile devices since mobile does not have hover----------------------------------------*/
   @media (hover: none){
 
     body{
@@ -245,7 +250,8 @@ p{
     .GD{
         position: static;
         padding: 0;
-        margin: 1vh !important;
+        margin: 10vh !important;
+        line-height: 250pt;
     }
     .LS{
         position: static;
@@ -288,12 +294,15 @@ p{
 
     }
 
+    /* --------------------------if smaller than 1050px----------------------------- */
 
-    @media(hover: none),(max-width: 1000px){
-        .GD{
-            line-height: 10vh;
-        }
+  @media (max-width: 1200px) {
+    .GD{
+        margin-top: 20vh;
+        line-height: 120pt;
     }
+  }
+
 
 
     /*---------------------------- if smaller than 750 px---------------------- */
@@ -311,10 +320,11 @@ p{
     }
     .GD{
         font-size: 21vw;
-        line-height: 15vh;
+        line-height: 90pt;
         position: static;
         padding: 0;
         margin: 1vh !important;
+        /* color: red; */
     }
     .LS{
         position: static;
@@ -357,17 +367,10 @@ p{
 
     }
 
-    @media (max-width: 1000px) {
-        .GD{
-            line-height: 19vh;
-        }
-    }
 
-/* .image{
-    position: absolute;
-    border: 1px solid black;
-    height: 50%;
-    width: 50%;
-    z-index: 1000;
-} */
+    @media (max-width: 400px) {
+        .GD{
+            line-height: 50pt;
+        }
+      }
 

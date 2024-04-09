@@ -40,8 +40,8 @@ $(document).ready(function() {
 
 
         $('.GD').css({
-          "top": newgdY/75 + "px",
-          "left": newgdX/75 + "px",
+          "top": newgdY/70 + "px",
+          "left": newgdX/70 + "px",
         })
 
         // ----------------------- this makes divs follow cursor  --------------------------------
