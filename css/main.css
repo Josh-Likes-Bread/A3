@@ -350,6 +350,12 @@ p{
 
     }
 
+    @media (max-width: 1000px) {
+        .GD{
+            line-height: 19vh;
+        }
+    }
+
 /* .image{
     position: absolute;
     border: 1px solid black;
@@ -357,7 +363,4 @@ p{
     width: 50%;
     z-index: 1000;
 } */
-
-
-
 
