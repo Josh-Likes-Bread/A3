@@ -226,9 +226,11 @@ p{
 
 
 
+/* ------------------------------------------------------------------media queries------------------------------------------------------------ */
+
 
 /* this should work for all mobile devices since mobile does not have hover */
-  @media (hover: none) {
+  @media (hover: none){
 
     body{
         overflow: scroll;
@@ -241,8 +243,6 @@ p{
         padding: auto;
     }
     .GD{
-        font-size: 20vw;
-        line-height: 15vh;
         position: static;
         padding: 0;
         margin: 1vh !important;
@@ -289,7 +289,14 @@ p{
     }
 
 
-    /*---------------------------- if smaller than 720 px---------------------- */
+    @media(hover: none),(max-width: 1000px){
+        .GD{
+            line-height: 10vh;
+        }
+    }
+
+
+    /*---------------------------- if smaller than 750 px---------------------- */
 
     @media (max-width: 750px) {
 
@@ -304,7 +311,7 @@ p{
     }
     .GD{
         font-size: 21vw;
-        line-height: 6vh;
+        line-height: 15vh;
         position: static;
         padding: 0;
         margin: 1vh !important;
