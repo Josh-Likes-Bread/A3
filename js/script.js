@@ -7,7 +7,7 @@ $(document).ready(function() {
   var thirdIndex = 2;
   var fourthIndex = 3;
 
-  //---- this changes bg to what ever image you click -----------------
+  //---- this changes bg to whatever image you click -----------------
 
   $('.images img').on('click', function() {
     var imageUrl = $(this).attr('src');
